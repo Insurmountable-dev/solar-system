@@ -14,7 +14,7 @@ const camera = new THREE.PerspectiveCamera(
 
 
 //camera position
-camera.position.z = 20;
+camera.position.set(0,1, 20);
 
 
 //Create Renderer
@@ -33,7 +33,7 @@ scene.add(sunLight);
 
 
 // Create The sun
-const sunGeometry = new THREE.SphereGeometry();
+const sunGeometry = new THREE.SphereGeometry(5,64,64);
 const sunMaterial = new THREE.MeshStandardMaterial({
     color: 0xffcc00,
     emissive: 0xffaa00,
@@ -51,5 +51,5 @@ const sphere = new THREE.SphereGeometry(1, 64, 64);
 
 
 // Exporting Needed Items
-export{scene, camera, renderer, sphere, THREE};
+export{scene, camera, renderer, sphere, THREE, sun};
 
