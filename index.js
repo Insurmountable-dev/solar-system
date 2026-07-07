@@ -1,9 +1,9 @@
 import * as THREE from "https://unpkg.com/three@0.181.1/build/three.module.js";
-import {animateEarth} from "./animate.js";
+import {createPlanets} from "./createPlanets.js";
 
 //Creating The Scene
-
-const scene = new  THREE.Scene();
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
 
 //Creating the Camera
 
@@ -15,7 +15,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 
 //camera position
-camera.position.z = 5;
+camera.position.z = 20;
 
 //Create Renderer
 
@@ -46,13 +46,8 @@ const sun = new THREE.Mesh(sunGeometry, sunMaterial);
 
 scene.add(sun);
 
-// Create Earth
-
-const earthGeometry = new THREE.SphereGeometry();
-const earthMaterial = new THREE.MeshStandardMaterial({  color: 0x0000ff});
-const earth = new THREE.Mesh(earthGeometry, earthMaterial);
-
-scene.add(earth);
+// // Create Planets
+createPlanets(scene);
 
 // animate
 
@@ -60,7 +55,7 @@ function animate () {
     requestAnimationFrame(animate);
 
     // Earth rotating around the sun
-    animateEarth(earth,sun);
+    // animateEarth(sun);
 
 
     //Running The scene
