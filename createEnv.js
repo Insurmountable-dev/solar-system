@@ -5,7 +5,6 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 
 //Creating the Camera
-
 const camera = new THREE.PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
@@ -13,18 +12,18 @@ const camera = new THREE.PerspectiveCamera(
     1000
 );
 
+
 //camera position
 camera.position.z = 20;
 
-//Create Renderer
 
+//Create Renderer
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 
 // Add lighting
-
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
 scene.add(ambientLight);
 
@@ -42,8 +41,15 @@ const sunMaterial = new THREE.MeshStandardMaterial({
 });
 
 const sun = new THREE.Mesh(sunGeometry, sunMaterial);
-
 scene.add(sun);
 
-export{scene, camera, renderer};
+// Creating Sphere
+const sphere = new THREE.SphereGeometry(1, 64, 64);
+
+
+
+
+
+// Exporting Needed Items
+export{scene, camera, renderer, sphere, THREE};
 

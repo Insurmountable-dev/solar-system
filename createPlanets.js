@@ -1,11 +1,9 @@
-import * as THREE from "https://unpkg.com/three@0.181.1/build/three.module.js";
-import {scene} from "./createEnv.js"
+import {scene,sphere,THREE} from "./createEnv.js"
 import {planets, planetMeshes} from "./planets.js";
 
 
-const sphere = new THREE.SphereGeometry(1, 64, 64);
 
-function createPlanets(){
+function createPlanets() {
 
     planets.forEach(planet => {
 
