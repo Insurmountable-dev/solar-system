@@ -24,15 +24,16 @@ document.body.appendChild(renderer.domElement);
 
 
 
+// animate
+
+function animate () {
+    requestAnimationFrame(animate);
+
+    //Running The scene
+    renderer.render(scene, camera);
 
 
+}
 
-
-
-
-
-
-
-//Running The scene
-
-renderer.render(scene, camera);
+// calling the function
+animate();
