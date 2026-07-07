@@ -1,16 +1,15 @@
+import {renderer,camera, scene} from "./createEnv.js";
+
+
 // Rotating The Earth Around The Sun
 let angle = 0;
 
-function animateEarth(earth, sun) {
+function animatePlanets() {
 
-    angle +=0.01;
+    requestAnimationFrame(animatePlanets);
 
-    earth.position.x = sun.position.x + 3* Math.cos(angle);
-
-    earth.position.z = sun.position.z + 3* Math.sin(angle);
-
-    earth.rotation.y += 0.02;
-
+//Rendering The Scene
+    renderer.render(scene, camera);
 }
 
-export { animateEarth };
+export { animatePlanets };
