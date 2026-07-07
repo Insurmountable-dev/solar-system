@@ -23,6 +23,16 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 
+// Add lighting
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.1);
+scene.add(ambientLight);
+
+const sunLight = new THREE.PointLight(0xffffff, 0.2);
+scene.add(sunLight);
+
+
+
 
 // animate
 
