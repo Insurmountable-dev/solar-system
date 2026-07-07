@@ -32,7 +32,18 @@ const sunLight = new THREE.PointLight(0xffffff, 0.2);
 scene.add(sunLight);
 
 
+// Create The sun
 
+const sunGeometry = new THREE.SphereGeometry();
+const sunMaterial = new THREE.MeshStandardMaterial({
+    color: 0xffcc00,
+    emissive: 0xffaa00,
+    emissiveIntensity: 3
+});
+
+const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+
+scene.add(sun);
 
 // animate
 
